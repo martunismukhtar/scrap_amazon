@@ -1,1 +1,1 @@
-# scrap_amazon
+# scraping data from amazon
