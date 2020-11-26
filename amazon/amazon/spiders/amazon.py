@@ -24,8 +24,12 @@ class AmazonSpider(Spider):
 
     def parse(self, response):
         # print(response)
-        mainDiv = response.css('div.s-main-slot>div.s-result-item>div.sg-col-inner>span.celwidget>div.s-expand-height>div.a-section>span.rush-component::text').extract()
-        print(mainDiv)
+        mainDiv = response.css('div.s-main-slot>div.s-result-item')
+        div1 = response.css('div.sg-col-inner>span.celwidget>div.s-expand-height')
+        div2 = response.css('div.s-desktop-content').getall()
+
+        # div.a-section>div.a-spacing-none>h2>a>span::text').extract()
+        print(div2[0])
         pass
 
     def spider_closed(self, spider):
